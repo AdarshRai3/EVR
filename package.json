@@ -1,0 +1,16 @@
+{
+  "name": "evr",
+  "version": "1.0.0",
+  "description": "this is the employee review system to review the performace of the employee and give them performance related feedback.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start":"nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adarsh Rai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
