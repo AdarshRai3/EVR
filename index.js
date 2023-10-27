@@ -1,4 +1,5 @@
 import express from 'express';
+import expressEjsLayouts from 'express-ejs-layouts';
 import ReviewController from './src/controllers/reviews.controller.js';
 import path from 'path';
 
@@ -11,6 +12,7 @@ app.set("views", path.join(path.resolve(),'src','views'));
 const reviewController = new ReviewController();
 
 app.use(express.static('src/views'));
+app.use(expressEjsLayouts);
 app.get('/', reviewController.getReviews);
 
 
