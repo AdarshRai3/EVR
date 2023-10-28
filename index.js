@@ -7,6 +7,7 @@ const app = express();
 
 app.set("view engine", 'ejs');
 app.set("views", path.join(path.resolve(),'src','views'));
+app.use(express.urlencoded({extended:true}));
 // creating an instaance for  review controller 
 
 const reviewController = new ReviewController();
@@ -14,7 +15,11 @@ const reviewController = new ReviewController();
 app.use(express.static('src/views'));
 app.use(expressEjsLayouts);
 app.get('/', reviewController.getReviews);
-
+app.get('/new', reviewController.getAddForm);
+app.post('/',
+// adding validation middleware before the controller function
+// validationMiddleware, 
+reviewController.postNewReviews);
 
 app.listen(7000);
 console.log("EVR app is running on port 7000")

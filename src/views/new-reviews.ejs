@@ -1,0 +1,33 @@
+<!-- views/add-product.ejs -->
+
+<h1 class="mt-5 mb-4">Add Review Project</h1>
+<!-- this form is submitting on / url and the method of the form is post -->
+<form action="/" method="post">
+   <% if(errorMessage){%>
+    <div class="alert alert-danger" role="alert">
+         <%= errorMessage %>
+      </div>
+    <%}%>
+    <div class="mb-3">
+        <label for="name" class="form-label">Empolyee Name</label>
+        <input type="text" class="form-control" id="name" name="name" >
+    </div>
+    <div class="mb-3">
+        <label for="goalsSet" class="form-label">Task Given</label>
+        <input type="number" class="form-control" id="goalsSet" name="goalsSet" >
+    </div>
+    <div class="mb-3">
+        <label for="goalsAch" class="form-label">Task Completed</label>
+        <input type="number" class="form-control" id="goalsAch" name="goalsAch" >
+        
+    </div>
+    <div class="mb-3"> 
+        <label for="rating" class="form-label">Rating</label>
+        <input type="number" class="form-control" id="rating" name="rating" >
+    </div>
+    <div class="mb-3">
+        <label for="feedback" class="form-label">Feedback</label>
+        <textarea class="form-control" id="feedback" name="feedback" rows="3" ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+</form>

@@ -13,13 +13,13 @@
     <tbody>
         <% reviews.forEach(review=>{ %>
             <tr>
-                        <th><%= review.id %></th>
-                        <td><%= review.name %></td>
-                        <td><%= review.goalsSet %> </td>
-                        <td><%= review.goalsAch %></td>
-                        <td><%= review.rating%></td>
-                        <td><%= review.feedback%></td>
-            </tr>
+                <th><%= review.id %></th>
+                <td><%= review.name %></td>
+                <td><%= review.goalsSet %> </td>
+                <td><%= review.goalsAch %></td>
+                <td><%= review.rating %></td>
+                <td><%= review.feedback %></td>
+            </tr>        
         <% }) %>           
     </tbody>
 </table>
