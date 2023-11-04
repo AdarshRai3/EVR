@@ -1,24 +1,42 @@
 
 <table class="table table-dark">
     <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Task Assigned</th>
-                    <th scope="col">Task Completed</th>
-                    <th scope="col">Rating</th>
-                    <th scope="col">Feedback</th>
-                </tr>
+        <tr>
+            <th scope="col">Employee ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Department</th>
+            <th scope="col">Position</th>
+            <th scope="col">Performance Goals</th>
+            <th scope="col">Task Completion</th>
+            <th scope="col">Skills and Competencies</th>
+            <th scope="col">Attendance</th>
+            <th scope="col">Feedback</th>
+            <th scope="col">Training and Development</th>
+            <th scope="col">Overall Rating</th>
+            <th scope="col">Actions</th>
+        </tr>
     </thead>
     <tbody>
         <% reviews.forEach(review=>{ %>
             <tr>
                 <th><%= review.id %></th>
                 <td><%= review.name %></td>
-                <td><%= review.goalsSet %> </td>
-                <td><%= review.goalsAch %></td>
-                <td><%= review.rating %></td>
+                <td><%= review.department %></td>
+                <td><%= review.position %></td>
+                <td><%= review.performanceGoals %></td>
+                <td><%= review.taskCompletion %></td>
+                <td><%= review.skillsAndCompetencies %></td>
+                <td><%= review.attendance %></td>
                 <td><%= review.feedback %></td>
+                <td><%= review.trainingAndDevelopment %></td>
+                <td><%= review.overallRating %></td>    
+                
+                <td> 
+                    <a href="/update-review/<%= review.id %>" class ="btn btn-warning"> Update </a>
+                    <a href="/delete-review/<%= review.id %>" class ="btn btn-danger">  Delete </a> 
+                    <a href="/employee/<%= review.id %>" class="btn btn-info">Submit Review</a>
+                </td>
+               
             </tr>        
         <% }) %>           
     </tbody>

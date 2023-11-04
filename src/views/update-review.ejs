@@ -1,0 +1,47 @@
+<h1 class="mt-5 mb-4">Add Employee Review</h1>
+<form action="/update-review" method="post">
+    
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= review.id %>" >
+   
+    <div class="mb-3">
+        <label for="name" class="form-label">Employee Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= review.name %>" >
+    </div>
+    <div class="mb-3">
+        <label for="department" class="form-label">Department</label>
+        <input type="text" class="form-control" id="department" name="department" value="<%= review.department %>" >
+    </div>
+    <div class="mb-3">
+        <label for="position" class="form-label">Position</label>
+        <input type="text" class="form-control" id="position" name="position" value="<%= review.position %>">
+    </div>
+    <div class="mb-3">
+        <label for="performanceGoals" class="form-label">Performance Goals</label>
+        <input type="text" class="form-control" id="performanceGoals" name="performanceGoals" value="<%= review.performanceGoals %>">
+    </div>
+    <div class="mb-3">
+        <label for="taskCompletion" class="form-label">Task Completion</label>
+        <input type="text" class="form-control" id="taskCompletion" name="taskCompletion" value="<%= review.taskCompletion %>">
+    </div>
+    <div class="mb-3">
+        <label for="skillsAndCompetencies" class="form-label">Skills and Competencies</label>
+        <input type="text" class="form-control" id="skillsAndCompetencies" name="skillsAndCompetencies" value="<%= review.skillsAndCompetencies %>" >
+    </div>
+    <div class="mb-3">
+        <label for="attendance" class="form-label">Attendance</label>
+        <input type="text" class="form-control" id="attendance" name="attendance" value="<%= review.attendance %>">
+    </div>
+    <div class="mb-3">
+        <label for="feedback" class="form-label">Feedback</label>
+        <textarea class="form-control" id="feedback" name="feedback" rows="3"><%= review.feedback %></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="trainingAndDevelopment" class="form-label">Training and Development</label>
+        <input type="text" class="form-control" id="trainingAndDevelopment" name="trainingAndDevelopment" value="<%= review.trainingAndDevelopment %>">
+    </div>
+    <div class="mb-3">
+        <label for="overallRating" class="form-label">Overall Rating</label>
+        <input type="text" class="form-control" id="overallRating" name="overallRating" value="<%= review.overallRating %>" >
+    </div>
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+</form>
