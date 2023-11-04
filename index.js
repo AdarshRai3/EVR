@@ -1,6 +1,7 @@
 import express from 'express';
 import expressEjsLayouts from 'express-ejs-layouts';
 import ReviewController from './src/controllers/reviews.controller.js';
+import EmployeeController from './src/controllers/employee.controller.js';
 import path from 'path';
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(expressEjsLayouts);
 // creating an instaance for  review controller 
 
 const reviewController = new ReviewController();
+const employeeController = new EmployeeController();
 
  app.get
     (
@@ -43,6 +45,10 @@ const reviewController = new ReviewController();
     
  app.get("/delete-review/:id", reviewController.deleteReview);
 
+ app.get(
+      "/employee/:id", 
+      employeeController.getEmployeeReview
+   );
 
 
  app.listen(7000);
