@@ -18,6 +18,7 @@ export default class EmployeeController{
         review: reviewFound,
         reviews:reviews,
         errorMessage: null,
+        layout: false 
       });
     } 
         
