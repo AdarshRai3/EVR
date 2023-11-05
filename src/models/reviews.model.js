@@ -1,6 +1,6 @@
 
 export default class ReviewModel {
-    constructor(id, name, department, position, performanceGoals, taskCompletion, skillsAndCompetencies, attendance, feedback, trainingAndDevelopment, overallRating) {
+    constructor(id, name, department, position, performanceGoals, taskCompletion, skillsAndCompetencies, attendance, feedback, trainingAndDevelopment, overallRating,photo) {
         this.id = id;
         this.name = name;
         this.department = department;
@@ -12,6 +12,7 @@ export default class ReviewModel {
         this.feedback = feedback;
         this.trainingAndDevelopment = trainingAndDevelopment;
         this.overallRating = overallRating;
+        this.photo = photo;
     }
 
     static get() {
@@ -30,7 +31,8 @@ export default class ReviewModel {
             reviewObj.attendance,
             reviewObj.feedback,
             reviewObj.trainingAndDevelopment,
-            reviewObj.overallRating
+            reviewObj.overallRating,
+            reviewObj.photo
         );
         reviews.push(newReview);
     }
@@ -66,6 +68,6 @@ var reviews = [
         "Absent 2 days in the last month",
         "Positive feedback from team members",
         "Completed leadership training",
-        "Good"
+        4.2
     )
 ]

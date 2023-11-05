@@ -5,25 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/employee.css">
+    <link rel="stylesheet" href="/css/reviews.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6834fc8242.js" crossorigin="anonymous"></script>
     <title>Reviews</title>
   </head>
 
- <body>
+ <body style="background: #fc4a1a;  /* fallback for old browsers */
+ background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ ">
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-light" data-bs-theme="light" style="box-shadow: 0 5px 0 0 rgb(173, 204, 230);"> 
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ERS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="nav1 ">
+                <i class="fa-solid fa-magnifying-glass-chart fa-xl" style="color: #075ced;"></i>
+                <a class="navbar-brand" href="#">ERS</a>
+            </div>   
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                   data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                   aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+                </button>
+           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     
@@ -31,50 +39,42 @@
             </div>
         </div>
     </nav>
+ 
     <div class="container">
-        <table class="table table-dark">
-            <thead>
-                <tr>
-                    <th scope="col">Employee ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Position</th>
-                    <th scope="col">Performance Goals</th>
-                    <th scope="col">Task Completion</th>
-                    <th scope="col">Skills and Competencies</th>
-                    <th scope="col">Attendance</th>
-                    <th scope="col">Feedback</th>
-                    <th scope="col">Training and Development</th>
-                    <th scope="col">Overall Rating</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% reviews.forEach(review=>{ %>
-                    <tr>
-                        <th><%= review.id %></th>
-                        <td><%= review.name %></td>
-                        <td><%= review.department %></td>
-                        <td><%= review.position %></td>
-                        <td><%= review.performanceGoals %></td>
-                        <td><%= review.taskCompletion %></td>
-                        <td><%= review.skillsAndCompetencies %></td>
-                        <td><%= review.attendance %></td>
-                        <td><%= review.feedback %></td>
-                        <td><%= review.trainingAndDevelopment %></td>
-                        <td><%= review.overallRating %></td>    
-                        
-                        <td> 
-                            <a href="/update-review/<%= review.id %>" class ="btn btn-warning"> Update </a>
-                            <a href="/delete-review/<%= review.id %>" class ="btn btn-danger">  Delete </a> 
-                            <a href="/employee/<%= review.id %>" class="btn btn-success">Submit Review</a>
-                        </td>
-                       
-                    </tr>        
-                <% }) %>           
-            </tbody>
-        </table>
+        <% reviews.forEach(review=>{ %>
+            <div class="card mb-3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title"><%= review.name %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= review.position %></h6>
+                    </div>
+                    <div>
+                        <p style="font-size: larger;font-style: bolder; color:rgb(0, 2, 5);"><%= new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) %></p>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <p class="card-text"><strong>Employee ID:</strong> <%= review.id %></p>
+                            <p class="card-text"><strong>Department:</strong> <%= review.department %></p>
+                            <p class="card-text"><strong>Performance Goals:</strong> <%= review.performanceGoals %></p>
+                            <p class="card-text"><strong>Task Completion:</strong> <%= review.taskCompletion %></p>
+                            <p class="card-text"><strong>Skills and Competencies:</strong> <%= review.skillsAndCompetencies %></p>
+                            <p class="card-text"><strong>Attendance:</strong> <%= review.attendance %></p>
+                            <p class="card-text"><strong>Feedback:</strong> <%= review.feedback %></p>
+                            <p class="card-text"><strong>Training and Development:</strong> <%= review.trainingAndDevelopment %></p>
+                            <p class="card-text"><strong>Overall Rating:</strong> <%= review.overallRating %></p>
+                        </div>
+                        <div style="width: 150px;margin:2rem; height: 200px; border: 2px solid rgb(5, 139, 248);">
+                            <img src="<%= review.photo %>" alt="Employee Photo" style="width: 100%; height: 100%;">
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        <% }) %>
     </div>
+    
 </body>
 
 </html>   

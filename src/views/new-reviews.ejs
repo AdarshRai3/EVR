@@ -1,55 +1,60 @@
 <!-- views/add-product.ejs -->
 
-<h1 class="mt-5 mb-4">Add Employee Review</h1>
-<form action="/" method="post">
-   <!-- <% if(errorMessage){%>
-    <div class="alert alert-danger" role="alert">
-         <%= errorMessage %>
-      </div>
-    <%}%> -->
-    <div class="mb-3">
-        <label for="id" class="form-label">Employee ID</label>
-        <input type="text" class="form-control" id="id" name="id" >
+<div class="card" style="box-shadow: 5px 5px 5px 5px lightblue" >
+    <div class="card-body" >
+        <h1 class="mt-5 mb-4" style="text-align:center; color:rgb(0, 153, 255)">Add Employee Review</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <!-- <% if(errorMessage){%>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+            </div>
+            <%}%> -->
+            
+            <div class="mb-3">
+                <label for="name" class="form-label">Employee Name</label>
+                <input type="text" class="form-control" id="name" name="name" >
+            </div>
+            <div class="mb-3">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" name="department" >
+            </div>
+            <div class="mb-3">
+                <label for="position" class="form-label">Position</label>
+                <input type="text" class="form-control" id="position" name="position" >
+            </div>
+            <div class="mb-3">
+                <label for="performanceGoals" class="form-label">Performance Goals</label>
+                <input type="text" class="form-control" id="performanceGoals" name="performanceGoals" >
+            </div>
+            <div class="mb-3">
+                <label for="taskCompletion" class="form-label">Task Completion</label>
+                <input type="text" class="form-control" id="taskCompletion" name="taskCompletion" >
+            </div>
+            <div class="mb-3">
+                <label for="skillsAndCompetencies" class="form-label">Skills and Competencies</label>
+                <input type="text" class="form-control" id="skillsAndCompetencies" name="skillsAndCompetencies" >
+            </div>
+            <div class="mb-3">
+                <label for="attendance" class="form-label">Attendance</label>
+                <input type="text" class="form-control" id="attendance" name="attendance" >
+            </div>
+            <div class="mb-3">
+                <label for="feedback" class="form-label">Feedback</label>
+                <textarea class="form-control" id="feedback" name="feedback" rows="3" ></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="trainingAndDevelopment" class="form-label">Training and Development</label>
+                <input type="text" class="form-control" id="trainingAndDevelopment" name="trainingAndDevelopment" >
+            </div>
+            <div class="mb-3">
+                <label for="overallRating" class="form-label">Overall Rating</label>
+                <input type="float" class="form-control" id="overallRating" name="overallRating" >
+            </div>
+            <div class="mb-3">
+                <label for="photo" class="form-label">Employee Photo</label>
+                <input type="file" class="form-control" id="photo" name="photo" >
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Review</button>
+        </form>
     </div>
-    <div class="mb-3">
-        <label for="name" class="form-label">Employee Name</label>
-        <input type="text" class="form-control" id="name" name="name" >
-    </div>
-    <div class="mb-3">
-        <label for="department" class="form-label">Department</label>
-        <input type="text" class="form-control" id="department" name="department" >
-    </div>
-    <div class="mb-3">
-        <label for="position" class="form-label">Position</label>
-        <input type="text" class="form-control" id="position" name="position" >
-    </div>
-    <div class="mb-3">
-        <label for="performanceGoals" class="form-label">Performance Goals</label>
-        <input type="text" class="form-control" id="performanceGoals" name="performanceGoals" >
-    </div>
-    <div class="mb-3">
-        <label for="taskCompletion" class="form-label">Task Completion</label>
-        <input type="text" class="form-control" id="taskCompletion" name="taskCompletion" >
-    </div>
-    <div class="mb-3">
-        <label for="skillsAndCompetencies" class="form-label">Skills and Competencies</label>
-        <input type="text" class="form-control" id="skillsAndCompetencies" name="skillsAndCompetencies" >
-    </div>
-    <div class="mb-3">
-        <label for="attendance" class="form-label">Attendance</label>
-        <input type="text" class="form-control" id="attendance" name="attendance" >
-    </div>
-    <div class="mb-3">
-        <label for="feedback" class="form-label">Feedback</label>
-        <textarea class="form-control" id="feedback" name="feedback" rows="3" ></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="trainingAndDevelopment" class="form-label">Training and Development</label>
-        <input type="text" class="form-control" id="trainingAndDevelopment" name="trainingAndDevelopment" >
-    </div>
-    <div class="mb-3">
-        <label for="overallRating" class="form-label">Overall Rating</label>
-        <input type="text" class="form-control" id="overallRating" name="overallRating" >
-    </div>
-    <button type="submit" class="btn btn-primary">Submit Review</button>
-</form>
+</div>

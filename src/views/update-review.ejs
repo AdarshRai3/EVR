@@ -1,5 +1,13 @@
-<h1 class="mt-5 mb-4">Add Employee Review</h1>
-<form action="/update-review" method="post">
+<div class="card" style="box-shadow:5px 5px 5px 5px lightblue" >
+ <div class="card-body" >
+
+     <h1 class="mt-5 mb-4" style="color:rgb(0, 102, 255);text-align:center;">Update Employee Review</h1>
+     <form action="/update-review" method="post" enctype="multipart/form-data">
+   <!-- <% if(errorMessage){%>
+    <div class="alert alert-danger" role="alert">
+         <%= errorMessage %>
+      </div>
+    <%}%> -->
     
     <input type="hidden" class="form-control" id="id" name="id" value="<%= review.id %>" >
    
@@ -41,7 +49,13 @@
     </div>
     <div class="mb-3">
         <label for="overallRating" class="form-label">Overall Rating</label>
-        <input type="text" class="form-control" id="overallRating" name="overallRating" value="<%= review.overallRating %>" >
+        <input type="float" class="form-control" id="overallRating" name="overallRating" value="<%= review.overallRating %>" >
     </div>
-    <button type="submit" class="btn btn-primary">Submit Review</button>
-</form>
+    <div class="mb-3">
+        <label for="photo" class="form-label">Employee Photo</label>
+        <input type="file" class="form-control" id="photo" name="photo" >
+    </div>
+    <button type="submit" class="btn btn-primary" style="display:flex;justify-content:flex-end;color:white;font-weight: 600;">Submit Review</button>
+      </form>
+ </div>
+</div>
