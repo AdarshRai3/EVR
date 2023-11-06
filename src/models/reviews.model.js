@@ -19,20 +19,21 @@ export default class ReviewModel {
         return reviews;
     }
 
-    static add(reviewObj) {
+    static add(name,department,position,performanceGoals,taskCompletion,skillsAndCompetencies,attendance,feedback,trainingAndDevelopment,overallRating,photo) 
+    {
         let newReview = new ReviewModel(
             reviews.length + 1,
-            reviewObj.name,
-            reviewObj.department,
-            reviewObj.position,
-            reviewObj.performanceGoals,
-            reviewObj.taskCompletion,
-            reviewObj.skillsAndCompetencies,
-            reviewObj.attendance,
-            reviewObj.feedback,
-            reviewObj.trainingAndDevelopment,
-            reviewObj.overallRating,
-            reviewObj.photo
+            name,
+            department,
+            position,
+            performanceGoals,
+            taskCompletion,
+            skillsAndCompetencies,
+            attendance,
+            feedback,
+            trainingAndDevelopment,
+            overallRating,
+            photo
         );
         reviews.push(newReview);
     }
@@ -68,6 +69,7 @@ var reviews = [
         "Absent 2 days in the last month",
         "Positive feedback from team members",
         "Completed leadership training",
-        4.2
+        4.2,
+        'images/1699291444321-PlaceholderImage.jpg'
     )
 ]

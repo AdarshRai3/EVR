@@ -3,6 +3,7 @@ import expressEjsLayouts from 'express-ejs-layouts';
 import ReviewController from './src/controllers/reviews.controller.js';
 import EmployeeController from './src/controllers/employee.controller.js';
 import path from 'path';
+import { uploadFile } from './src/middlewares/fileupload.middleware.js';
 
 const app = express();
 
@@ -31,8 +32,9 @@ const employeeController = new EmployeeController();
     (
         '/',
       // adding validation middleware before the controller function
+       uploadFile.single('photo'),
       // validationMiddleware, 
-        reviewController.postNewReviews
+       reviewController.postNewReviews
     );
  app.get
     (
@@ -40,7 +42,10 @@ const employeeController = new EmployeeController();
         reviewController.getUpdateReview
         
     );
- app.post("/update-review/", reviewController.postUpdateReview);
+ app.post("/update-review/", 
+            uploadFile.single('photo'),
+            reviewController.postUpdateReview
+   );
 
     
  app.get("/delete-review/:id", reviewController.deleteReview);

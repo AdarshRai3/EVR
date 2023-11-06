@@ -13,10 +13,12 @@ export default class ReviewController{
        });
     }
     postNewReviews(req,res){
-        console.log(req.body)
-       let  reviews = ReviewModel.get()
-       ReviewModel.add(req.body)
-       res.render("reviews",{reviews:reviews})
+       const {name,department,position,performanceGoals,taskCompletion,skillsAndCompetencies,attendance,feedback,trainingAndDevelopment,overallRating} = req.body;
+       const photo = 'images/'+ req.file.filename;
+       
+       ReviewModel.add(name,department,position,performanceGoals,taskCompletion,skillsAndCompetencies,attendance,feedback,trainingAndDevelopment,overallRating,photo);
+       let  reviews = ReviewModel.get();
+       res.render("reviews",{reviews})
     }
     getUpdateReview(req,res){
         const id = req.params.id;
