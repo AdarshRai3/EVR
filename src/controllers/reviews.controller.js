@@ -5,11 +5,12 @@ export default class ReviewController{
     getReviews(req,res){
         let reviews = ReviewModel.get()
         console.log(reviews)
-        res.render('reviews',{reviews : reviews})
+        res.render('reviews',{reviews : reviews,userEmail: req.session.userEmail})
     }
     getAddForm(req,res){
        return res.render('new-reviews', {
-         errorMessage:null
+         errorMessage:null,
+         userEmail: req.session.userEmail
        });
     }
     postNewReviews(req,res){
@@ -18,7 +19,7 @@ export default class ReviewController{
        
        ReviewModel.add(name,department,position,performanceGoals,taskCompletion,skillsAndCompetencies,attendance,feedback,trainingAndDevelopment,overallRating,photo);
        let  reviews = ReviewModel.get();
-       res.render("reviews",{reviews})
+       res.render("reviews",{reviews,userEmail: req.session.userEmail})
     }
     getUpdateReview(req,res){
         const id = req.params.id;
@@ -27,6 +28,7 @@ export default class ReviewController{
           res.render('update-review', {
             review: reviewFound,
             id:id,
+            userEmail: req.session.userEmail,
             errorMessage: null
           });
         }
@@ -39,7 +41,7 @@ export default class ReviewController{
     postUpdateReview(req, res) {
         ReviewModel.update(req.body);
         var reviews = ReviewModel.get();
-        res.render('reviews', { reviews });
+        res.render('reviews', { reviews,userEmail: req.session.userEmail });
     }
     // method to delete the project in the list
     deleteReview(req, res){
@@ -50,7 +52,7 @@ export default class ReviewController{
         }
         ReviewModel.delete(id);
         var reviews = ReviewModel.get();
-        res.render('reviews', { reviews });
+        res.render('reviews', { reviews ,userEmail: req.session.userEmail });
     }
 
 }

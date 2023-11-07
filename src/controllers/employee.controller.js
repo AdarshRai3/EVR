@@ -17,6 +17,7 @@ export default class EmployeeController{
         return res.render('employee', {
         review: reviewFound,
         reviews:reviews,
+        userEmail: req.session.userEmail,
         errorMessage: null,
         layout: false 
       });
