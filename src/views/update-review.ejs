@@ -1,7 +1,7 @@
-<div class="card" style="box-shadow:5px 5px 5px 5px lightblue" >
+<div class="card" style="color:white ; background-color: rgb(39, 38, 41);box-shadow:2px 2px 2px 2px rgb(114, 99, 148);" >
  <div class="card-body" >
 
-     <h1 class="mt-5 mb-4" style="color:rgb(0, 102, 255);text-align:center;">Update Employee Review</h1>
+     <h1 class="mt-5 mb-4" style="color:rgb(132, 0, 255);text-align:center;">Update Employee Review</h1>
      <form action="/update-review" method="post" enctype="multipart/form-data">
    <!-- <% if(errorMessage){%>
     <div class="alert alert-danger" role="alert">
@@ -53,7 +53,7 @@
     </div>
     <div class="mb-3">
         <label for="photo" class="form-label">Employee Photo</label>
-        <input type="file" class="form-control" id="photo" name="photo" accept="images/*"  >
+        <input type="file" class="form-control" id="photo" name="photo" accept="images/*"  value="<%=review.photo%>" >
     </div>
     <button type="submit" class="btn btn-primary" style="display:flex;justify-content:flex-end;color:white;font-weight: 600;">Submit Review</button>
       </form>
