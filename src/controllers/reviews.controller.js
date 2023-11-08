@@ -9,8 +9,9 @@ export default class ReviewController{
     }
     getAddForm(req,res){
        return res.render('new-reviews', {
+         userEmail: req.session.userEmail,
          errorMessage:null,
-         userEmail: req.session.userEmail
+         
        });
     }
     postNewReviews(req,res){
