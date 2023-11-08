@@ -20,7 +20,7 @@ export default class UserController {
       const { email, password ,key} = req.body;
       const user = UserModel.isValidUser(
         email,
-        password
+        password,
       );
       if (!user && !(key== "employee" || key == "boss")) {
         return res.render('login', {

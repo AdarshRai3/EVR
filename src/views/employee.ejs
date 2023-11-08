@@ -19,29 +19,32 @@
  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
  background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
  ">
+
 <nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light" style="box-shadow: 0 5px 0 0 rgb(173, 204, 230);">
     <div class="container-fluid">
         <div class="nav1 ">
             <i class="fa-solid fa-magnifying-glass-chart fa-xl" style="color: #075ced;"></i>
             <a class="navbar-brand" href="#">ERS</a>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+        <div class = "nav2">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-5 mb-lg-0">
+                   
+                    <li class="nav-item">
                     <a  class="nav-link active btn btn-primary" style="color: white; margin-left: auto;" aria-current="page" href="/logout">Logout</a>
-                </li>
-            </ul>
+                    </li>
+
+                </ul>
+            </div>
         </div>
     </div>
-</nav>
+ </nav>
 
-
- 
     <div class="container">
         <% reviews.forEach(review=>{ %>
             <div class="card mb-3" style="color:white ; background-color: rgb(39, 38, 41);">
@@ -68,7 +71,7 @@
                             <p class="card-text"><strong>Overall Rating:</strong> <%= review.overallRating %></p>
                         </div>
                         <div style="width: 150px;margin:2rem; height: 200px; border: 2px solid rgb(5, 139, 248);">
-                            <img src="<%= review.photo %>" alt="Employee Photo" style="width: 100%; height: 100%;">
+                            <img src="/images/1699281512144-PlaceholderImage.jpg" alt="Employee Photo" style="width: 100%; height: 100%;">
                         </div>
                     </div>
                 
